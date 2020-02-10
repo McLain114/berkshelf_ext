@@ -107,6 +107,13 @@ module BerkshelfExt
   end
 end
 
+module Berkshelf
+  module Cli
+    class << self
+    end
+  end
+end
+
 Berkshelf::Cli.send(:include, BerkshelfExt::NestedBerksfiles::Cli)
 Berkshelf::Berksfile.send(:include, BerkshelfExt::NestedBerksfiles::Berksfile)
 Berkshelf::Resolver.send(:include, BerkshelfExt::NestedBerksfiles::Resolver)

@@ -6,8 +6,8 @@ module BerkshelfExt
           klass.class_eval do
             alias_method :non_dependency_chains_sources, :sources
             alias_method :sources, :dependency_chains_sources
-            alias_method :non_dependency_chains_resolve, :resolve
-            alias_method :resolve, :dependency_chains_resolve
+            alias_method :resolver, :dependency_chains_resolve
+            alias_method :non_dependency_chains_resolve, :resolver
           end
         end
       end
@@ -42,8 +42,8 @@ module BerkshelfExt
       class << self
         def included(klass)
           klass.class_eval do
-            alias_method :non_dependency_chains_resolve, :resolve
-            alias_method :resolve, :dependency_chains_resolve
+            alias_method :resolver, :dependency_chains_resolve
+            alias_method :non_dependency_chains_resolve, :resolver
           end
         end
       end

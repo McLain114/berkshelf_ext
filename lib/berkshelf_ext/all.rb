@@ -1,4 +1,5 @@
 require 'berkshelf'
+require 'thor'
 
 if(ENV['BERKSHELF_EXT_EVERYTHING'].to_s.downcase == 'true')
   Dir.glob(File.join(File.dirname(__FILE__), '**', '*.rb')).each do |ext_file|
